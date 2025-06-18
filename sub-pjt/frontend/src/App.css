@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'CustomFont';
+  /* src 폴더(fonts 폴더 안)에 있는 OTF 파일을 상대경로로 참조 */
+  src: url('../public/fonts/Tamanegi Kaisho Geki FreeVer 7.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'CustomFont', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+  color: #000;
+}
+
+/* 상단 검은색 라인 */
+.top-line {
+  height: 40px;
+  background-color: #000;
+  width: 100%;
+}
+
+/* 헤더 */
+.header {
+  text-align: center;
+  padding: 16px 0;
+}
+.project-name {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* 메인 콘텐츠 */
+.content {
+  flex: 1;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  /* 수직 방향으로 중앙 정렬 */
+  justify-content: center;
+  align-items: center;
+  /* 뷰포트 높이를 꽉 채우고, 넘치면 스크롤 */
+  height: 100vh;
+  overflow: auto;
+}
+.layout {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 이미지 섹션 */
+.image-section {
+  flex: 1 1 100%;
+  max-width: 16%;
+  margin: 16px 0;
+}
+.image-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.image-section.left {
+  margin-right: 16px;
+}
+.image-section.right {
+  margin-left: 16px;
+}
+
+/* 버튼 그리드 */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 0 auto;     /* ← 이 한 줄로 수평 중앙 정렬 */
+}
+
+/* 버튼 */
+.btn {
+  padding: 8px 12px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.btn-image {
+  width: 200px;    /* 원하는 너비 */
+  height: 200px;   /* 원하는 높이 */
+  object-fit: cover;  /* 비율 유지하며 잘라내기 */
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.selected-word {
+  width: 100%;                /* 전체 너비 */
+  text-align: center;         /* 가운데 정렬 */
+  margin-top: 300px;           /* 위쪽 여백 */
+  font-size: 1.25rem;         /* 필요시 폰트 크기 조정 */
+  font-weight: 500;
+}
+
+.selected-line {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 1.1rem;
+  word-break: keep-all; /* 일본어 단어가 잘리지 않도록 */
+  font-family: 'CustomFont', sans-serif;
+}
+
+.clear-btn {
+  font-family: 'CustomFont', sans-serif;
+  margin-left: 12px;
+  padding: 4px 8px;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.clear-btn:hover {
+  background: #000;
+  color: #fff;
+}
+.confirm-btn {
+  font-family: 'CustomFont', sans-serif;
+  margin-left: 12px;
+  padding: 4px 8px;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.confirm-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* 세로쓰기 */
+.vertical-text {
+  position: absolute;
+  right: 7%;
+  top: 20px;
+  /* 세로쓰기 모드, 오른쪽에서 왼쪽 방향 */
+  writing-mode: vertical-rl;
+  /* 글자마다 세로 방향을 유지 */
+  text-orientation: upright;
+  /* 줄바꿈(\n)을 그대로 살려줌 */
+  white-space: pre-wrap;
+  
+  /* 적당한 폰트 설정 (CustomFont로 교체 가능) */
+  font-family: 'CustomFont', serif;
+  font-size: 1.4rem;
+  /* 글자 간·줄 간격 조정 */
+  line-height: 1.6;
+  padding: 16px;
+  /* 배경·테두리로 고전 느낌 강조하기 */
+  /* background: #fdf9f0;
+  border: 1px solid #ccc; */
+
+  /* 여기서 높이 제한 + 내부 스크롤 */
+  max-height: 80vh;      /* 뷰포트의 80% */
+  overflow-y: auto;
+}
