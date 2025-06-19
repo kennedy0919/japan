@@ -31,13 +31,13 @@ public class OpenAiService {
      */
     public Mono<String> generateNovel(List<String> words) {
         String prompt =
-                "約2000字程度の長編小説の冒頭を、以下の単語を使って現代の日常系で書いてください：\n" +
+                "約250字程度の長編小説の冒頭を、以下の単語を使って現代の日常系で書いてください：\n" +
                         String.join("、", words) +
                         "\n\n小説：";
 
         Map<String, Object> body = Map.of(
                 "model", "gpt-3.5-turbo",
-                "max_tokens", 3000,                           // ★ 충분히 크게 설정
+                "max_tokens", 2000,                           // ★ 충분히 크게 설정
                 "temperature", 0.7,                           // 스타일 조정용
                 "messages", List.of(
                         Map.of("role", "system", "content", "舞台は2025年の現在\n" +

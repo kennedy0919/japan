@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'CustomFont';
   /* src 폴더(fonts 폴더 안)에 있는 OTF 파일을 상대경로로 참조 */
-  src: url('../public/fonts/Tamanegi Kaisho Geki FreeVer 7.ttf') format('opentype');
+  src: url('../public/fonts/Yu Mincho Pr6N R.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -156,26 +156,20 @@ body {
 /* 세로쓰기 */
 .vertical-text {
   position: absolute;
-  right: 7%;
-  top: 20px;
-  /* 세로쓰기 모드, 오른쪽에서 왼쪽 방향 */
-  writing-mode: vertical-rl;
-  /* 글자마다 세로 방향을 유지 */
-  text-orientation: upright;
-  /* 줄바꿈(\n)을 그대로 살려줌 */
-  white-space: pre-wrap;
-  
-  /* 적당한 폰트 설정 (CustomFont로 교체 가능) */
-  font-family: 'CustomFont', serif;
-  font-size: 1.4rem;
-  /* 글자 간·줄 간격 조정 */
-  line-height: 1.6;
-  padding: 16px;
-  /* 배경·테두리로 고전 느낌 강조하기 */
-  /* background: #fdf9f0;
-  border: 1px solid #ccc; */
+  top: 17%;
+  left: 50%;
+  transform: translate(-50%, -10%);
 
-  /* 여기서 높이 제한 + 내부 스크롤 */
-  max-height: 80vh;      /* 뷰포트의 80% */
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: pre-wrap;
+
+  font-family: 'CustomFont', serif;
+  font-size: 2rem;        /* 크고 시원한 글자 */
+  line-height: 4rem;    /* 적당한 세로 간격 */
+  letter-spacing: 0.6rem;  /* 위아래 간격을 조절 */
+  padding: 20px;
+
+  max-height: 180vh;
   overflow-y: auto;
 }

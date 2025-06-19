@@ -75,7 +75,7 @@ export default function App() {
       setDisplayedStory(prev => prev + generatedStory.charAt(idx));
       idx++;
       if (idx >= generatedStory.length) clearInterval(timer);
-    }, 20);
+    }, 40);
 
     return () => clearInterval(timer);
   }, [showNovelPage, generatedStory]);
